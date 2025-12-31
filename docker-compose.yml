@@ -14,7 +14,7 @@ services:
     container_name: rtic-recap-app
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "8123:3000"
     environment:
       - NODE_ENV=production
 
@@ -29,7 +29,7 @@ services:
       - .:/app
       - /app/node_modules
     ports:
-      - "8123:3000"
+      - "3000:3000"
     environment:
       - NODE_ENV=development
     command: sh -c "corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm dev"
